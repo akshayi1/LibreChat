@@ -15,9 +15,15 @@ registration:
   - google
   - openid
 endpoints:
+  openAI:
+    disabled: true
+  anthropic:
+    disabled: true
+  google:
+    disabled: true
   custom:
   - name: OpenRouter
-    apiKey: user_provided
+    apiKey: ${OPENROUTER_KEY}
     baseURL: https://openrouter.ai/api/v1
     models:
       default:
@@ -199,7 +205,7 @@ endpoints:
       - qwen/qwen3-8b
       - qwen/qwq-32b
       - qwen/qwq-32b-preview
-      fetch: false
+      fetch: true
     dropParams:
     - stop
     titleConvo: true
